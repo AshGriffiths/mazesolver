@@ -16,7 +16,12 @@ def main() -> None:
     cell_size_x: int = (screen_x - 2 * margin) // num_cols
     cell_size_y: int = (screen_y - 2 * margin) // num_rows
     win = Window(screen_x, screen_y)
-    Maze(margin, margin, num_rows, num_cols, cell_size_x, cell_size_y, win, seed)
+    maze = Maze(margin, margin, num_rows, num_cols, cell_size_x, cell_size_y, win, seed)
+    print(f"Maze generated using {'seed ' + str(seed) if seed else 'a random seed.'}")
+    if maze.solve():
+        print("Maze solved!")
+    else:
+        print("Maze cannot be solved!")
     win.wait_for_close()
 
 
