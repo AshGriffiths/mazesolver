@@ -63,4 +63,3 @@ class Cell(object):
                 self._win.draw_line(line, fill_colour)
                 line = Line(Point(to_x_mid, to_y_mid), Point(to_x_mid, to_cell._y1))
                 self._win.draw_line(line, fill_colour)
-
